@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeCrafted by Adnan</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
@@ -26,7 +30,7 @@
       <div class="container nav-container">
         <div class="logo">
           <!-- You could replace this text with a small icon or logo image -->
-          <a href="#hero">CodeCrafted</a>
+          <a href="#hero"><span class="logo-icon">&lt;/&gt;</span> CodeCrafted</a>
         </div>
         <nav id="navbar">
           <ul>
@@ -75,7 +79,7 @@
 
     <!-- About Section -->
     <section id="about">
-      <div class="container about-container reveal">
+      <div class="container cert-intro-terminal about-container reveal">
         <div class="about-image">
           <!-- Updated image path: images are stored at the repository root -->
           <img src="profile.png" alt="Illustration of Adnan" />
@@ -107,12 +111,30 @@
             <img src="docker-original.svg" alt="Docker" />
           </div>
         </div>
+        <div class="metrics-container">
+          <div class="metric-block glass-box">
+            <span class="metric-value">✔️ 25+</span>
+            <span class="metric-label">Projects Completed</span>
+          </div>
+          <div class="metric-block glass-box">
+            <span class="metric-value">🕒 5+</span>
+            <span class="metric-label">Years of Experience</span>
+          </div>
+          <div class="metric-block glass-box">
+            <span class="metric-value">💯 100%</span>
+            <span class="metric-label">Client Satisfaction</span>
+          </div>
+          <div class="metric-block glass-box">
+            <span class="metric-value">🧠 300+</span>
+            <span class="metric-label">Problems Solved</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-      <div class="container">
+      <div class="container terminal-box-individual">
         <h2 class="section-title">Projects</h2>
         <!-- Tabs to filter projects. Each tab button carries a category identifier -->
         <div class="project-tabs">
@@ -184,7 +206,7 @@
 
     <!-- Experience Section -->
     <section id="experience">
-      <div class="container">
+      <div class="container terminal-box-individual">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
           <!-- Timeline Item 1 -->
@@ -237,9 +259,18 @@
       </div>
     </section>
 
+    <!-- Certifications & Recognition Section -->
+    <section id="certifications-intro">
+      <div class="container">
+        <div class="terminal-box-individual">
+          <span class="prompt">#</span> "Continuous learning is the key to mastery. Here are some of my certifications, awards, and recognitions."
+        </div>
+      </div>
+    </section>
+    
     <!-- Education Section -->
     <section id="education">
-      <div class="container">
+      <div class="container terminal-box-individual">
         <h2 class="section-title">Education</h2>
         <div class="education-list">
           <div class="edu-item reveal">
@@ -252,98 +283,117 @@
               hundreds of students.
             </p>
           </div>
-          <div class="edu-item reveal">
-            <h3>Humber College</h3>
-            <span class="edu-degree">Diploma in Software Engineering</span>
-            <span class="edu-date">2016 – 2018</span>
-            <p>
-              Focused on software development fundamentals and object‑oriented
-              design. Achieved top 5% ranking in cohort and developed several
-              open source projects.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-wrapper">
-          <!-- Programming Languages -->
-          <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-bar" data-level="90">
-              <span class="skill-name">JavaScript</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="85">
-              <span class="skill-name">Python</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="80">
-              <span class="skill-name">Java</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="70">
-              <span class="skill-name">C++</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-          </div>
-          <!-- Frameworks & Libraries -->
-          <div class="skill-category">
-            <h3>Frameworks & Libraries</h3>
-            <div class="skill-bar" data-level="85">
-              <span class="skill-name">Node.js</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="75">
-              <span class="skill-name">React</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="80">
-              <span class="skill-name">Express</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="70">
-              <span class="skill-name">Flask</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-          </div>
-          <!-- Tools & Platforms -->
-          <div class="skill-category">
-            <h3>Tools & Platforms</h3>
-            <div class="skill-bar" data-level="90">
-              <span class="skill-name">Git</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="80">
-              <span class="skill-name">Docker</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="70">
-              <span class="skill-name">AWS</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="75">
-              <span class="skill-name">Linux</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-            <div class="skill-bar" data-level="85">
-              <span class="skill-name">SQL</span>
-              <div class="skill-progress"><span class="progress-inner"></span></div>
-            </div>
-          </div>
+<section id="skills">
+  <div class="container terminal-box-individual">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-wrapper">
+
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <div class="skill-bar" data-level="90">
+          <span class="skill-name"><i class="fab fa-js-square"></i> JavaScript</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="85">
+          <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="80">
+          <span class="skill-name"><i class="fab fa-java"></i> Java</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="70">
+          <span class="skill-name"><i class="fas fa-code"></i> C++</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
         </div>
       </div>
-    </section>
+
+      <!-- Frameworks & Libraries -->
+      <div class="skill-category">
+        <h3>Frameworks & Libraries</h3>
+        <div class="skill-bar" data-level="85">
+          <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="75">
+          <span class="skill-name"><i class="fab fa-react"></i> React</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="80">
+          <span class="skill-name"><i class="fas fa-server"></i> Express</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="70">
+          <span class="skill-name"><i class="fas fa-flask"></i> Flask</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms -->
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <div class="skill-bar" data-level="90">
+          <span class="skill-name"><i class="fab fa-git-alt"></i> Git</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="80">
+          <span class="skill-name"><i class="fab fa-docker"></i> Docker</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="70">
+          <span class="skill-name"><i class="fab fa-aws"></i> AWS</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="75">
+          <span class="skill-name"><i class="fab fa-linux"></i> Linux</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+        <div class="skill-bar" data-level="85">
+          <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
+          <div class="skill-progress"><span class="progress-inner"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact">
-      <div class="container">
+      <div class="container terminal-box-individual">
         <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content reveal">
+        <div class="contact-content reveal contact-flex">
+          <div class="terminal-box-individual">
+            <div class="contact-info-block">
+              <span class="prompt">📍</span> <span>Toronto, Canada</span>
+            </div>
+            <div class="contact-info-block">
+              <span class="prompt">✉️</span> <span>adnanfahad500@gmail.com</span>
+            </div>
+            <div class="contact-info-block">
+              <span class="prompt">📞</span> <span>+1 234 567 8901</span>
+            </div>
+            <div class="contact-info-block">
+              <span class="prompt">🔗</span> <span>Follow Me:</span>
+              <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                  <img src="git-original.svg" alt="GitHub" />
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                  <img src="java-original.svg" alt="LinkedIn" />
+                </a>
+                <a href="mailto:adnanfahad500@gmail.com" aria-label="Email">
+                  <img src="docker-original.svg" alt="Email" />
+                </a>
+              </div>
+            </div>
+          </div>
           <form id="contact-form" action="https://formsubmit.co/adnanfahad500@gmail.com" method="POST">
             <!-- Additional hidden fields for FormSubmit: disable captcha and set a custom subject -->
             <input type="hidden" name="_subject" value="New message from portfolio site" />
@@ -372,25 +422,6 @@
             <!-- Status message placeholder shown after submission -->
             <div id="form-status" role="status" aria-live="polite"></div>
           </form>
-          <div class="social-links">
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <img src="git-original.svg" alt="GitHub" />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <img src="java-original.svg" alt="LinkedIn" />
-            </a>
-            <a href="mailto:youremail@example.com" aria-label="Email">
-              <img src="docker-original.svg" alt="Email" />
-            </a>
-          </div>
         </div>
       </div>
     </section>
