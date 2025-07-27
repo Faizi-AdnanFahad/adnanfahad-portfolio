@@ -305,7 +305,7 @@ nav ul li a:hover::after {
 /* About Section */
 #about {
   padding: 5rem 0;
-  background-color: var(--bg-secondary);
+  /* background-color: var(--bg-secondary); */
 }
 
 .about-container {
@@ -313,6 +313,17 @@ nav ul li a:hover::after {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
+}
+
+.frosted-glass {
+  /* Frosted glass effect */
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(1px); /* apply blur */
+  -webkit-backdrop-filter: blur(1px); /* Safari support */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .about-image img {
@@ -379,13 +390,11 @@ nav ul li a:hover::after {
 /* Projects Section */
 #projects {
   padding: 5rem 0;
-  background-color: var(--bg-color);
 }
 
 /* Education Section */
 #education {
   padding: 5rem 0;
-  background-color: var(--bg-secondary);
 }
 
 .education-list {
@@ -429,7 +438,6 @@ nav ul li a:hover::after {
 /* Skills Section */
 #skills {
   padding: 5rem 0;
-  background-color: var(--bg-color);
 }
 
 .skills-wrapper {
@@ -593,7 +601,6 @@ nav ul li a:hover::after {
 /* Timeline */
 #experience {
   padding: 5rem 0;
-  background-color: var(--bg-secondary);
 }
 
 .timeline {
@@ -669,7 +676,6 @@ nav ul li a:hover::after {
 /* Contact Section */
 #contact {
   padding: 5rem 0;
-  background-color: var(--bg-color);
 }
 
 .contact-content {
@@ -935,6 +941,25 @@ footer {
   overflow-x: auto;
   box-sizing: border-box;
 }
+
+.terminal-box-individual {
+  background: #10131a;
+  border: 2px solid var(--terminal-border);
+  border-radius: 8px;
+  box-shadow: var(--terminal-glow);
+  padding: 2em;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1em;
+  color: var(--accent);
+  margin-bottom: 2em;
+  position: relative;
+  box-sizing: border-box;
+
+  /* Simplified layout for standalone content */
+  display: block;
+  overflow: hidden;
+}
+
 .terminal-body {
   min-height: 480px;
   max-width: 820px;
