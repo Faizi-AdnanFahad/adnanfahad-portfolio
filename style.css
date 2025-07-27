@@ -928,79 +928,79 @@ footer {
   color: var(--accent);
   margin-bottom: 2em;
   position: relative;
-}
-.prompt {
-  color: var(--accent);
-  font-weight: bold;
-  margin-right: 0.5em;
-  font-family: 'Fira Code', monospace;
-}
-
-/* About Metrics Terminal */
-.about-metrics-terminal {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5em;
-  margin-top: 2em;
-  background: #10131a;
-  border: 2px solid var(--terminal-border);
-  border-radius: 8px;
-  box-shadow: var(--terminal-glow);
-  padding: 1.2em 2em;
-  font-family: 'Fira Code', monospace;
-}
-.metric-block {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-width: 120px;
+  overflow-x: auto;
+  box-sizing: border-box;
 }
-.metric-value {
-  font-size: 1.3em;
-  color: var(--accent);
-  font-family: 'Fira Code', monospace;
-  margin-bottom: 0.2em;
-}
-.metric-label {
-  color: var(--text-muted);
-  font-size: 0.9em;
-}
-
-/* Certifications Intro Terminal */
-.cert-intro-terminal {
-  margin: 2em auto 2em auto;
-  max-width: 700px;
-  text-align: left;
-  font-size: 1.1em;
-}
-
-/* Contact Panel Terminal */
-.contact-flex {
+.terminal-body {
+  min-height: 480px;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1.32em;
+  background: #10131a;
+  border: 2.5px solid #00ff99;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 0 5px 2px #00ff99, 0 0 48px 8px #00ff9944;
+  padding: 2.8em 2.8em 2.8em 2.8em;
+  font-family: 'Fira Code', 'Menlo', 'Consolas', monospace;
+  color: #b6ffb6;
+  margin-bottom: 2.5em;
+  position: relative;
   display: flex;
-  gap: 2em;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+.terminal-line {
+  display: flex;
+  align-items: center;
+  min-height: 2.2em;
+  margin-bottom: 0.18em;
+  color: #b6ffb6;
+  font-family: 'Fira Code', 'Menlo', 'Consolas', monospace;
+  font-size: 1.08em;
+  letter-spacing: 0.01em;
+  white-space: pre-wrap;
   justify-content: center;
 }
-.contact-panel-terminal {
-  min-width: 260px;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  font-size: 1em;
-  background: #10131a;
-  border: 2px solid var(--terminal-border);
-  border-radius: 8px;
-  box-shadow: var(--terminal-glow);
-  padding: 1.5em 1.5em;
-  color: var(--accent);
+.terminal-cmd {
+  color: #00ff99;
+  font-weight: 600;
 }
-.contact-info-block {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-  font-family: 'Fira Code', monospace;
-  font-size: 1em;
+.terminal-output {
+  color: #e6ffe6;
+  margin-left: 0.5em;
+  font-weight: 400;
+}
+.terminal-input {
+  color: #00ff99;
+}
+.cursor {
+  display: inline-block;
+  width: 1.1ch;
+  height: 1.2em;
+  background: none;
+  color: #00ff99;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+@media (max-width: 900px) {
+  .terminal-body {
+    padding: 1.2em 0.5em 1.2em 0.5em;
+    min-height: 260px;
+    font-size: 1em;
+  }
 }
 
 /* Responsive for terminal panels */
@@ -1054,5 +1054,20 @@ footer {
   }
   .form-row input {
     width: 100%;
+  }
+}
+
+.terminal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  margin-top: 2.5em;
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .terminal-actions {
+    flex-direction: column;
+    gap: 0.7em;
+    margin-top: 1.2em;
   }
 }

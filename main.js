@@ -129,6 +129,17 @@ function typeWriter() {
     }
   }
   type();
+  // Add terminal actions at the bottom if not already present
+  const terminalBody = document.getElementById('hero-terminal-body');
+  if (terminalBody && !terminalBody.querySelector('.terminal-actions')) {
+    const actions = document.createElement('div');
+    actions.className = 'terminal-actions';
+    actions.innerHTML = `
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+    `;
+    terminalBody.appendChild(actions);
+  }
 }
 
 /**
