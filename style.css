@@ -189,7 +189,6 @@ nav ul li a:hover::after {
   text-align: center;
   color: var(--text-color);
   /* Updated background path: the hero background image lives at the repo root on GitHub Pages */
-  background: linear-gradient(to bottom, rgba(14, 14, 47, 0.9), rgba(14, 14, 47, 0.9)), url('hero-bg.png') center/cover no-repeat;
   padding-top: var(--nav-height);
   overflow: hidden; /* ensure stars and background don't bleed into next sections */
 }
@@ -1012,6 +1011,14 @@ footer {
   }
   .about-metrics-terminal {
     gap: 1em;
+  }
+  #contact .contact-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  #contact .contact-panel-terminal, #contact #contact-form {
+    max-width: 100%;
   }
 }
 
