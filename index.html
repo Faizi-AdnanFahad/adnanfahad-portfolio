@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeCrafted by Adnan</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Global Starfield overlay -->
+    <!-- This div will house the floating stars canvas. It sits fixed behind
+         all content and spans the full viewport. The stars themselves are
+         generated via JavaScript in main.js.  -->
+    <div id="starfield" aria-hidden="true"></div>
+    
+    <!-- Header / Navigation -->
+    <header>
+      <div class="container nav-container">
+        <div class="logo">
+          <!-- You could replace this text with a small icon or logo image -->
+          <a href="#hero">CodeCrafted</a>
+        </div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <!-- Added links for the new Education and Skills sections -->
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">
+          <!-- Icon updated via JS -->
+          <svg id="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content container">
+        <h1 class="hero-title">Hi, I'm Adnan</h1>
+        <h2 class="hero-subtitle">
+          <span id="typed-text"></span>
+          <span class="cursor">|</span>
+        </h2>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="assets/resume/resume.pdf" class="btn secondary" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container about-container reveal">
+        <div class="about-image">
+          <img src="assets/images/profile.png" alt="Illustration of Adnan" />
+        </div>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>
+            I’m Adnan, a passionate full‑stack developer and backend craftsman
+            with an eye for elegant solutions. Whether architecting scalable
+            APIs or crafting seamless user experiences, I thrive on turning
+            complex problems into clean, maintainable code.
+          </p>
+          <ul class="fun-facts">
+            <li>🤝 Team player and mentor</li>
+            <li>🪲 Bug smasher extraordinaire</li>
+            <li>🤖 Automation enthusiast</li>
+            <li>🎵 Occasional musician and audiophile</li>
+          </ul>
+          <h3>Tech Stack</h3>
+          <div class="tech-stack">
+            <img src="assets/icons/html5-original.svg" alt="HTML5" />
+            <img src="assets/icons/css3-original.svg" alt="CSS3" />
+            <img src="assets/icons/javascript-original.svg" alt="JavaScript" />
+            <img src="assets/icons/java-original.svg" alt="Java" />
+            <img src="assets/icons/python-original.svg" alt="Python" />
+            <img src="assets/icons/nodejs-original.svg" alt="Node.js" />
+            <img src="assets/icons/git-original.svg" alt="Git" />
+            <img src="assets/icons/docker-original.svg" alt="Docker" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <!-- Tabs to filter projects. Each tab button carries a category identifier -->
+        <div class="project-tabs">
+          <button class="tab-btn active" data-category="all">All</button>
+          <button class="tab-btn" data-category="personal">Personal Projects</button>
+          <button class="tab-btn" data-category="school">School Projects</button>
+        </div>
+        <div class="project-grid">
+          <!-- Project Card 1 -->
+          <div class="project-card reveal" data-category="personal" data-modal="modal1">
+            <img src="assets/images/project1.png" alt="Project 1 preview" />
+            <div class="project-info">
+              <h3>Project One</h3>
+              <p>An AI‑powered task manager that helps you organize and
+                prioritize your life with style.</p>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">AI</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn small" target="_blank">Live Demo</a>
+                <a href="#" class="btn small" target="_blank">View Code</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="project-card reveal" data-category="personal" data-modal="modal2">
+            <img src="assets/images/project2.png" alt="Project 2 preview" />
+            <div class="project-info">
+              <h3>Project Two</h3>
+              <p>A real‑time chat application with end‑to‑end encryption and
+                beautiful UI animations.</p>
+              <div class="tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">CSS Animations</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn small" target="_blank">Live Demo</a>
+                <a href="#" class="btn small" target="_blank">View Code</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="project-card reveal" data-category="school" data-modal="modal3">
+            <img src="assets/images/project3.png" alt="Project 3 preview" />
+            <div class="project-info">
+              <h3>Project Three</h3>
+              <p>A responsive portfolio template generator that turns your
+                markdown into modern, responsive websites.</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn small" target="_blank">Live Demo</a>
+                <a href="#" class="btn small" target="_blank">View Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-icon">
+              <img src="assets/icons/java-original.svg" alt="Company logo" />
+            </div>
+            <div class="timeline-content">
+              <h3>Senior Java Developer</h3>
+              <span class="timeline-date">2023 – Present</span>
+              <p>
+                Architected microservices for a high‑traffic e‑commerce platform,
+                improving performance by 30% and reducing deployment times.
+              </p>
+            </div>
+          </div>
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-icon">
+              <img src="assets/icons/python-original.svg" alt="Company logo" />
+            </div>
+            <div class="timeline-content">
+              <h3>Backend Engineer</h3>
+              <span class="timeline-date">2021 – 2023</span>
+              <p>
+                Built scalable RESTful APIs in Python and deployed them in
+                Dockerized environments, serving millions of requests per day.
+              </p>
+            </div>
+          </div>
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-icon">
+              <img src="assets/icons/nodejs-original.svg" alt="Company logo" />
+            </div>
+            <div class="timeline-content">
+              <h3>Full‑Stack Developer</h3>
+              <span class="timeline-date">2019 – 2021</span>
+              <p>
+                Developed dynamic web applications using Node.js and React,
+                collaborating with cross‑functional teams to deliver rich user
+                experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-list">
+          <div class="edu-item reveal">
+            <h3>Toronto Metropolitan University</h3>
+            <span class="edu-degree">B.Sc. in Computer Science</span>
+            <span class="edu-date">2018 – 2022</span>
+            <p>
+              Graduated with honours on the Dean’s List each year. Led a capstone
+              project to build a secure, scalable web application used by
+              hundreds of students.
+            </p>
+          </div>
+          <div class="edu-item reveal">
+            <h3>Humber College</h3>
+            <span class="edu-degree">Diploma in Software Engineering</span>
+            <span class="edu-date">2016 – 2018</span>
+            <p>
+              Focused on software development fundamentals and object‑oriented
+              design. Achieved top 5% ranking in cohort and developed several
+              open source projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-wrapper">
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-bar" data-level="90">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="85">
+              <span class="skill-name">Python</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="80">
+              <span class="skill-name">Java</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="70">
+              <span class="skill-name">C++</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+          </div>
+          <!-- Frameworks & Libraries -->
+          <div class="skill-category">
+            <h3>Frameworks & Libraries</h3>
+            <div class="skill-bar" data-level="85">
+              <span class="skill-name">Node.js</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="75">
+              <span class="skill-name">React</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="80">
+              <span class="skill-name">Express</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="70">
+              <span class="skill-name">Flask</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+          </div>
+          <!-- Tools & Platforms -->
+          <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-bar" data-level="90">
+              <span class="skill-name">Git</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="80">
+              <span class="skill-name">Docker</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="70">
+              <span class="skill-name">AWS</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="75">
+              <span class="skill-name">Linux</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+            <div class="skill-bar" data-level="85">
+              <span class="skill-name">SQL</span>
+              <div class="skill-progress"><span class="progress-inner"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content reveal">
+          <form id="contact-form" action="https://formsubmit.co/adnanfahad500@gmail.com" method="POST">
+            <!-- Additional hidden fields for FormSubmit: disable captcha and set a custom subject -->
+            <input type="hidden" name="_subject" value="New message from portfolio site" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="form-row">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit" class="btn primary">Send Message</button>
+            <!-- Status message placeholder shown after submission -->
+            <div id="form-status" role="status" aria-live="polite"></div>
+          </form>
+          <div class="social-links">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img src="assets/icons/git-original.svg" alt="GitHub" />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img src="assets/icons/java-original.svg" alt="LinkedIn" />
+            </a>
+            <a href="mailto:youremail@example.com" aria-label="Email">
+              <img src="assets/icons/docker-original.svg" alt="Email" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals for project previews -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+      <div class="modal-dialog">
+        <span class="modal-close" aria-label="Close">&times;</span>
+        <img src="assets/images/project1.png" alt="Project 1 larger preview" />
+        <h3>Project One – AI Task Manager</h3>
+        <p>
+          This project leverages artificial intelligence to help users manage
+          tasks, deadlines, and priorities. It includes natural language
+          processing for input, adaptive scheduling, and a sleek dashboard.
+        </p>
+        <ul>
+          <li>Built with Vanilla JS, CSS, and HTML</li>
+          <li>Integrates with external AI APIs</li>
+          <li>Responsive and accessible design</li>
+        </ul>
+        <div class="modal-links">
+          <a href="#" class="btn small" target="_blank">Live Demo</a>
+          <a href="#" class="btn small" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+      <div class="modal-dialog">
+        <span class="modal-close" aria-label="Close">&times;</span>
+        <img src="assets/images/project2.png" alt="Project 2 larger preview" />
+        <h3>Project Two – Real‑Time Chat App</h3>
+        <p>
+          A secure and stylish messaging application supporting group chats,
+          emoji reactions, and file sharing. End‑to‑end encryption keeps
+          conversations private and safe.
+        </p>
+        <ul>
+          <li>Node.js backend with Socket.IO</li>
+          <li>Vanilla JS front‑end animations</li>
+          <li>Dark and light theme support</li>
+        </ul>
+        <div class="modal-links">
+          <a href="#" class="btn small" target="_blank">Live Demo</a>
+          <a href="#" class="btn small" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+      <div class="modal-dialog">
+        <span class="modal-close" aria-label="Close">&times;</span>
+        <img src="assets/images/project3.png" alt="Project 3 larger preview" />
+        <h3>Project Three – Portfolio Generator</h3>
+        <p>
+          A tool that transforms simple markdown files into beautiful,
+          responsive portfolio websites. Perfect for developers who want to
+          showcase their work quickly and effortlessly.
+        </p>
+        <ul>
+          <li>Python Flask backend</li>
+          <li>Dynamic template rendering</li>
+          <li>Customizable themes</li>
+        </ul>
+        <div class="modal-links">
+          <a href="#" class="btn small" target="_blank">Live Demo</a>
+          <a href="#" class="btn small" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Adnan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
