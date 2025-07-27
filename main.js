@@ -218,23 +218,30 @@ function initContactForm() {
       statusEl.className = '';
     }
     try {
-      const response = await fetch(form.action, {
+      /*
+       * Use the Fetch API to submit the form. When sending to FormSubmit
+       * from a JavaScript application you must disable CORS mode because
+       * the service does not set the appropriate CORS headers. Without
+       * `mode: "no-cors"` the request will be blocked by the browser and
+       * will never reach the FormSubmit servers.  With `no-cors` the
+       * response always has an opaque status, so `response.ok` will always
+       * be false. Instead of inspecting `response.ok` we assume success
+       * as long as no exception is thrown.
+       */
+      await fetch(form.action, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-        },
+        mode: 'no-cors',
         body: new FormData(form),
       });
-      if (response.ok) {
-        if (statusEl) {
-          statusEl.textContent = 'Thank you! Your message has been sent.';
-          statusEl.classList.add('success');
-        }
-        form.reset();
-      } else {
-        throw new Error('Network response was not ok');
+      // We cannot read the response due to no-cors, but if the request
+      // succeeded the FormSubmit service will handle sending the email.
+      if (statusEl) {
+        statusEl.textContent = 'Thank you! Your message has been sent.';
+        statusEl.classList.add('success');
       }
+      form.reset();
     } catch (error) {
+      // If an exception occurred the network call failed
       if (statusEl) {
         statusEl.textContent = 'Oops! There was a problem sending your message.';
         statusEl.classList.add('error');
