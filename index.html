@@ -52,16 +52,23 @@
 
     <!-- Hero Section -->
     <section id="hero">
-      <div class="hero-content container">
-        <h1 class="hero-title">Hi, I'm Adnan</h1>
-        <h2 class="hero-subtitle">
-          <span id="typed-text"></span>
-          <span class="cursor">|</span>
-        </h2>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <!-- Updated resume path: resume lives at the repository root after upload -->
-          <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+      <!-- Terminal‑style hero content for a retro coding vibe. The outer container
+           centres the terminal box, while the inner elements emulate a
+           command‑line interface with coloured window controls and prompt
+           symbols. -->
+      <div class="hero-terminal reveal">
+        <div class="terminal-header">
+          <span class="circle red" aria-hidden="true"></span>
+          <span class="circle yellow" aria-hidden="true"></span>
+          <span class="circle green" aria-hidden="true"></span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> Hi, I'm Adnan</p>
+          <p><span class="prompt">$</span> <span id="typed-text"></span><span class="cursor">|</span></p>
+          <div class="terminal-actions">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+          </div>
         </div>
       </div>
     </section>

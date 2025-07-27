@@ -186,7 +186,8 @@ nav ul li a:hover::after {
   justify-content: center;
   text-align: center;
   color: var(--text-color);
-  background: linear-gradient(to bottom, rgba(14, 14, 47, 0.9), rgba(14, 14, 47, 0.9)), url('../assets/images/hero-bg.png') center/cover no-repeat;
+  /* Updated background path: the hero background image lives at the repo root on GitHub Pages */
+  background: linear-gradient(to bottom, rgba(14, 14, 47, 0.9), rgba(14, 14, 47, 0.9)), url('hero-bg.png') center/cover no-repeat;
   padding-top: var(--nav-height);
   overflow: hidden; /* ensure stars and background don't bleed into next sections */
 }
