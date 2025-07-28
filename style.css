@@ -409,7 +409,7 @@ nav ul li a:hover::after {
 
 .edu-item {
   background-color: var(--card-bg);
-  border: 1.5px solid var(--terminal-border);
+  border: 1.5px solid var(--card-border);
   border-radius: 8px;
   padding: 1.5rem;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
@@ -529,7 +529,7 @@ nav ul li a:hover::after {
 
 .project-card {
   background-color: var(--card-bg);
-  border: 1.5px solid var(--terminal-border);
+  border: 1.5px solid var(--card-border);
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -913,7 +913,7 @@ footer {
   align-items: center;
   gap: 0.5em;
   padding: 0.5em 1em 0.2em 1em;
-  background: #181c23;
+  background: #006b5b;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -964,6 +964,16 @@ footer {
   overflow: hidden;
 }
 
+body.light-mode .terminal-box-individual {
+  background: #fff;
+  border: 2px solid var(--card-border);
+  color: #222;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
+}
+body.light-mode .terminal-box-individual {
+  font-family: 'Fira Code', monospace;
+}
+
 .terminal-body {
   min-height: 480px;
   max-width: 820px;
@@ -984,6 +994,12 @@ footer {
   align-items: center;
   overflow-x: auto;
   box-sizing: border-box;
+}
+body.light-mode .terminal-body {
+  background: #fff;
+  border: 2.5px solid var(--card-border);
+  color: #222;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
 }
 .terminal-line {
   display: flex;
@@ -1112,6 +1128,12 @@ footer {
   max-width: 1100px;
 }
 
+body.light-mode .metrics-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
+}
+
 .glass-box.metric-block {
   background: rgba(16, 19, 26, 0.55);
   border-radius: 18px;
@@ -1130,10 +1152,10 @@ footer {
   margin-bottom: 1.2em;
 }
 
-.glass-box.metric-block:hover {
-  transform: scale(1.06) translateY(-6px);
-  box-shadow: 0 0 24px 2px #00ff99, 0 0 48px 8px #00ff9944;
-  border-color: #00ff99;
+body.light-mode .glass-box.metric-block {
+  background: #fff;
+  border: 1.5px solid var(--card-border);
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 24px 8px #e0e0e044;
 }
 
 .metric-value {
@@ -1144,6 +1166,10 @@ footer {
   font-weight: 700;
 }
 
+body.light-mode .metric-value {
+  color: #009e8e;
+}
+
 .metric-label {
   color: #e6ffe6;
   font-size: 1.1em;
@@ -1152,16 +1178,35 @@ footer {
   opacity: 0.92;
 }
 
+body.light-mode .metric-label {
+  color: #222;
+}
+
 /* Awards and Certifications Styles */
 .awards-certs {
   margin-top: 2.2rem;
-  background: rgba(16, 19, 26, 0.45);
+  background: rgba(16, 19, 26, 0.82);
   border-radius: 14px;
-  box-shadow: 0 4px 24px 0 rgba(0,255,153,0.12);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1.2px solid rgba(0,255,153,0.12);
-  padding: 1.5rem 1.2rem;
+  box-shadow: 0 0 24px 4px #00ff99, 0 0 48px 8px #00ff9944;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2.5px solid #00ff99;
+  padding: 2.5rem 2.2rem;
+  font-family: 'Fira Code', monospace;
+  color: #b6ffb6;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+body.light-mode .awards-certs {
+  background: #fff;
+  border: 2.5px solid var(--card-border);
+  color: #222;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
 }
 .awards-title {
   color: var(--accent);
@@ -1205,4 +1250,29 @@ footer {
     grid-template-columns: 1fr;
     gap: 0.7em;
   }
+}
+
+#matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: #10131a;
+  opacity: 0.85;
+}
+
+body.light-mode .cert-intro-terminal {
+  background: #fff;
+  border: 2px solid var(--card-border);
+  color: #222;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
+}
+
+body.light-mode .about-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
 }
