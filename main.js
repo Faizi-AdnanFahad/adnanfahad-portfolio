@@ -131,7 +131,7 @@ function createStarField() {
  * Implements a simple typewriter effect on the hero subtitle.
  */
 function typeWriter() {
-  const text = 'A Full Stack Developer & Backend Craftsman';
+  const text = 'A Software Engineer that is a bug slayer by day and a debugger by night :)';
   const typedText = document.getElementById('typed-text');
   let index = 0;
   function type() {

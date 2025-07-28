@@ -1,504 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeCrafted by Adnan</title>
+<head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCrafted by Adnan</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Main Stylesheet -->
-    <!-- Updated stylesheet path for GitHub Pages: the CSS file is in the repo root -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Global Starfield overlay -->
-    <!-- This div will house the floating stars canvas. It sits fixed behind
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Main Stylesheet -->
+  <!-- Updated stylesheet path for GitHub Pages: the CSS file is in the repo root -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Global Starfield overlay -->
+  <!-- This div will house the floating stars canvas. It sits fixed behind
          all content and spans the full viewport. The stars themselves are
          generated via JavaScript in main.js.  -->
-    <div id="starfield" aria-hidden="true"></div>
-    
-    <!-- Header / Navigation -->
-    <header>
-      <div class="container nav-container">
-        <div class="logo">
-          <a href="#hero"><span class="logo-icon">&lt;/&gt;</span> CodeCrafted</a>
-        </div>
-        <nav id="navbar">
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <!-- Hamburger button for mobile nav -->
-        <button class="hamburger" id="hamburger-menu" aria-label="Open navigation" aria-controls="navbar" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" aria-label="Toggle dark/light mode">
-          <svg id="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="5" fill="currentColor" />
-          </svg>
-        </button>
-      </div>
-    </header>
+  <div id="starfield" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section id="hero">
-      <!-- Terminal‑style hero content for a retro coding vibe. The outer container
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="#hero"><span class="logo-icon">&lt;/&gt;</span> CodeCrafted</a>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger button for mobile nav -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Open navigation" aria-controls="navbar"
+        aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <svg id="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" fill="currentColor" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <!-- Terminal‑style hero content for a retro coding vibe. The outer container
            centres the terminal box, while the inner elements emulate a
            command‑line interface with coloured window controls and prompt
            symbols. -->
-      <div class="hero-terminal reveal">
-        <div class="terminal-header">
-          <span class="circle red" aria-hidden="true"></span>
-          <span class="circle yellow" aria-hidden="true"></span>
-          <span class="circle green" aria-hidden="true"></span>
+    <div class="hero-terminal reveal">
+      <div class="terminal-header">
+        <span class="circle red" aria-hidden="true"></span>
+        <span class="circle yellow" aria-hidden="true"></span>
+        <span class="circle green" aria-hidden="true"></span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> Hi, I'm Adnan Fahad Faizi</p>
+        <p><span class="prompt">$</span> <span id="typed-text"></span><span class="cursor">|</span></p>
+        <div class="terminal-actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
         </div>
-        <div class="terminal-body">
-          <p><span class="prompt">$</span> Hi, I'm Adnan</p>
-          <p><span class="prompt">$</span> <span id="typed-text"></span><span class="cursor">|</span></p>
-          <div class="terminal-actions">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container cert-intro-terminal about-container reveal">
+      <div class="about-image">
+        <!-- Updated image path: images are stored at the repository root -->
+        <img src="profile.png" alt="Illustration of Adnan" />
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          I’m Adnan, a passionate full‑stack developer and backend craftsman
+          with an eye for elegant solutions. Whether architecting scalable
+          APIs or crafting seamless user experiences, I thrive on turning
+          complex problems into clean, maintainable code.
+        </p>
+        <ul class="fun-facts">
+          <li>🤝 Team player and mentor</li>
+          <li>🪲 Bug smasher extraordinaire</li>
+          <li>🤖 Automation enthusiast</li>
+          <li>🎵 Occasional musician and audiophile</li>
+        </ul>
+        <div class="awards-certs">
+          <h3 class="awards-title">Awards & Certifications</h3>
+          <ul class="awards-list">
+            <li><span class="award-icon">🏆</span> <a
+                href="https://lassonde.yorku.ca/research/undergraduate-research-at-lassonde/2021-lura-and-usra-research-at-lassonde"
+                target="_blank"> 1x LURA 2021 and 1x
+                NSERC 2022
+            <li><span class="award-icon">🏆</span> Dean’s List – York University (2020-2025)</li>
+            <li><span class="award-icon">🏆</span> Peter Cribb Award - York U 2024
+            </li>
+            <li><span class="award-icon">🏆</span> <a
+                href="https://lassonde.yorku.ca/best-entrance-award-recipients-fall-2020">BEST Entrance Award - York U
+                2020</a></li>
+            <li><span class="award-icon">🏆</span> STEM Entrepreneurship Boot Camp Winner - York U 2020</li>
+            <li><span class="award-icon">📄</span> IBM STEM For Girls Certificate - 2025</li>
+          </ul>
+        </div>
+      </div>
+      <div class="metrics-container">
+        <div class="metric-block glass-box">
+          <span class="metric-value">✔️ 25+</span>
+          <span class="metric-label">Projects Completed</span>
+        </div>
+        <div class="metric-block glass-box">
+          <span class="metric-value">🕒 3</span>
+          <span class="metric-label">Years of Experience</span>
+        </div>
+        <div class="metric-block glass-box">
+          <span class="metric-value">💯 100%</span>
+          <span class="metric-label">Client Satisfaction</span>
+        </div>
+        <div class="metric-block glass-box">
+          <span class="metric-value">🧠 300+</span>
+          <span class="metric-label">Problems Solved</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container terminal-box-individual">
+      <h2 class="section-title">Education</h2>
+      <div class="education-list">
+        <div class="edu-item reveal">
+          <h3>York University</h3>
+          <span class="edu-degree">B.Sc. in Computer Science</span>
+          <span class="edu-date">Sept 2020 – Dec 2025</span>
+          <p>
+            Graduated with honours on the Dean’s List each year maintaing a <b>GPA of 3.6/4.0</b>
+          </p>
+        </div>
+        <div class="edu-item reveal">
+          <h3>Udemy</h3>
+          <span class="edu-degree">The Web Developer Bootcamp</span>
+          <span class="edu-date">May 2022 – Aug 2022</span>
+          <p>
+            🔗 Certification
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container terminal-box-individual">
+      <h2 class="section-title">Projects</h2>
+      <!-- Tabs to filter projects. Each tab button carries a category identifier -->
+      <div class="project-tabs">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="personal">Personal Projects</button>
+        <button class="tab-btn" data-category="school">School Projects</button>
+      </div>
+      <div class="project-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card reveal" data-category="personal" data-modal="modal1">
+          <!-- Updated project thumbnail path: stored at root -->
+          <img src="project1.png" alt="Project 1 preview" />
+          <div class="project-info">
+            <h3>Project One</h3>
+            <p>An AI‑powered task manager that helps you organize and
+              prioritize your life with style.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">AI</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn small" target="_blank">Live Demo</a>
+              <a href="#" class="btn small" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="project-card reveal" data-category="personal" data-modal="modal2">
+          <!-- Updated project thumbnail path: stored at root -->
+          <img src="project2.png" alt="Project 2 preview" />
+          <div class="project-info">
+            <h3>Project Two</h3>
+            <p>A real‑time chat application with end‑to‑end encryption and
+              beautiful UI animations.</p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Socket.IO</span>
+              <span class="tag">CSS Animations</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn small" target="_blank">Live Demo</a>
+              <a href="#" class="btn small" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="project-card reveal" data-category="school" data-modal="modal3">
+          <!-- Updated project thumbnail path: stored at root -->
+          <img src="project3.png" alt="Project 3 preview" />
+          <div class="project-info">
+            <h3>Project Three</h3>
+            <p>A responsive portfolio template generator that turns your
+              markdown into modern, responsive websites.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn small" target="_blank">Live Demo</a>
+              <a href="#" class="btn small" target="_blank">View Code</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container cert-intro-terminal about-container reveal">
-        <div class="about-image">
-          <!-- Updated image path: images are stored at the repository root -->
-          <img src="profile.png" alt="Illustration of Adnan" />
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container terminal-box-individual">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <!-- Updated icon path for experience timeline -->
+            <img src="icons/work_experience/ibm.png" alt="Company logo" />
+          </div>
+          <div class="timeline-content">
+            <h3>Full Stack Developer (Intern)</h3>
+            <h4>IBM</h4>
+            <span class="timeline-date">May 2024 – Aug 2025</span>
+            <br>
+            <p>
+            <ul>
+              <li>
+                - Led administration of 9 full-stack internal tools supporting IBM’s WebSphere Application Server and
+                Open-Liberty.
+              </li>
+              <br>
+              <li>
+                - Implemented and debugged <b>100+</b> feature improvements and bug fixes, enhancing functionally
+                across these tools that were responsible for publishing fixes to customers, defect management,
+                infrastructure code and internal reports.
+              </li>
+              <br>
+              <li>
+                - Took the initiative to automate a manual process as a personal project which covered automatic file
+                detection in a release cycle for files that required translation to different languages eliminating
+                developer intervention in submitting, packaging, and updating translation files, streamlining the
+                pipeline and achieving a <b>100%</b> efficiency increase; <b>MVP deployed in 3 months</b> with
+                continuous improvements.
+              </li>
+              <br>
+              <li>
+                - Owned a critical end-to-end migration of our defect management system, overseeing the transformation
+                of how defects are tracked, referenced, and integrated across our tool suites. This process included a
+                migration strategy, rewrites of the code base, integration with the new API, and short-term dual-format
+                support.
+              </li>
+              <br>
+              <li>
+                - Completed <b>50+</b> infrastructure tasks, including project sizing, server migrations, modernization,
+                and
+                security patching.
+              </li>
+              <br>
+              <li>
+                - Proactively monitored logs, reproduced issues, and utilized modern debugging tools to swiftly resolve
+                reported issues and wrote scripts to automate repetitive tasks for personal productivity.
+              </li>
+            </ul>
+            </p>
+          </div>
         </div>
-        <div class="about-content">
-          <h2>About Me</h2>
-          <p>
-            I’m Adnan, a passionate full‑stack developer and backend craftsman
-            with an eye for elegant solutions. Whether architecting scalable
-            APIs or crafting seamless user experiences, I thrive on turning
-            complex problems into clean, maintainable code.
-          </p>
-          <ul class="fun-facts">
-            <li>🤝 Team player and mentor</li>
-            <li>🪲 Bug smasher extraordinaire</li>
-            <li>🤖 Automation enthusiast</li>
-            <li>🎵 Occasional musician and audiophile</li>
-          </ul>
-          <div class="awards-certs">
-            <h3 class="awards-title">Awards & Certifications</h3>
-            <ul class="awards-list">
-              <li><span class="award-icon">🏆</span> Google Cloud Certified Associate Engineer</li>
-              <li><span class="award-icon">🎓</span> AWS Certified Solutions Architect</li>
-              <li><span class="award-icon">💡</span> Hackathon Winner – TMU CodeFest 2023</li>
-              <li><span class="award-icon">🛡️</span> Microsoft Certified: Security, Compliance, and Identity Fundamentals</li>
-              <li><span class="award-icon">🚀</span> Dean’s List – Toronto Metropolitan University (2018–2022)</li>
-              <li><span class="award-icon">🔗</span> LinkedIn Learning: Advanced Node.js & Express</li>
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <!-- Updated icon path for experience timeline -->
+            <img src="icons/work_experience/image.png" alt="Company logo" />
+          </div>
+          <div class="timeline-content">
+            <h3>Automation Developer Intern</h3>
+            <h4>Ontario Government</h4>
+            <span class="timeline-date">May 2022 – Dec 2022</span>
+            <br>
+            <ul>
+              <li>
+                - Led the automation team in automating the regression tests reducing completion time from 2 days to few
+                hours.
+              </li>
+              <br>
+              <li>
+                - Served as backup for the senior QA Analyst, ensuring timely and thorough software releases.
+              </li>
+              <br>
+              <li>
+                - Wrote SQL queries to obtain test data and regenerating customer issues.
+              </li>
+              <br>
+              <li>
+                - Maintained the product manual and trained new Co-op students.
+              </li>
             </ul>
           </div>
         </div>
-        <div class="metrics-container">
-          <div class="metric-block glass-box">
-            <span class="metric-value">✔️ 25+</span>
-            <span class="metric-label">Projects Completed</span>
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <!-- Updated icon path for experience timeline -->
+            <img src="icons/work_experience/yorku.png" alt="Company logo" />
           </div>
-          <div class="metric-block glass-box">
-            <span class="metric-value">🕒 5+</span>
-            <span class="metric-label">Years of Experience</span>
-          </div>
-          <div class="metric-block glass-box">
-            <span class="metric-value">💯 100%</span>
-            <span class="metric-label">Client Satisfaction</span>
-          </div>
-          <div class="metric-block glass-box">
-            <span class="metric-value">🧠 300+</span>
-            <span class="metric-label">Problems Solved</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="container terminal-box-individual">
-        <h2 class="section-title">Projects</h2>
-        <!-- Tabs to filter projects. Each tab button carries a category identifier -->
-        <div class="project-tabs">
-          <button class="tab-btn active" data-category="all">All</button>
-          <button class="tab-btn" data-category="personal">Personal Projects</button>
-          <button class="tab-btn" data-category="school">School Projects</button>
-        </div>
-        <div class="project-grid">
-          <!-- Project Card 1 -->
-          <div class="project-card reveal" data-category="personal" data-modal="modal1">
-            <!-- Updated project thumbnail path: stored at root -->
-            <img src="project1.png" alt="Project 1 preview" />
-            <div class="project-info">
-              <h3>Project One</h3>
-              <p>An AI‑powered task manager that helps you organize and
-                prioritize your life with style.</p>
-              <div class="tags">
-                <span class="tag">JavaScript</span>
-                <span class="tag">HTML/CSS</span>
-                <span class="tag">AI</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn small" target="_blank">Live Demo</a>
-                <a href="#" class="btn small" target="_blank">View Code</a>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-          <div class="project-card reveal" data-category="personal" data-modal="modal2">
-            <!-- Updated project thumbnail path: stored at root -->
-            <img src="project2.png" alt="Project 2 preview" />
-            <div class="project-info">
-              <h3>Project Two</h3>
-              <p>A real‑time chat application with end‑to‑end encryption and
-                beautiful UI animations.</p>
-              <div class="tags">
-                <span class="tag">Node.js</span>
-                <span class="tag">Socket.IO</span>
-                <span class="tag">CSS Animations</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn small" target="_blank">Live Demo</a>
-                <a href="#" class="btn small" target="_blank">View Code</a>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="project-card reveal" data-category="school" data-modal="modal3">
-            <!-- Updated project thumbnail path: stored at root -->
-            <img src="project3.png" alt="Project 3 preview" />
-            <div class="project-info">
-              <h3>Project Three</h3>
-              <p>A responsive portfolio template generator that turns your
-                markdown into modern, responsive websites.</p>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">Flask</span>
-                <span class="tag">Responsive</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn small" target="_blank">Live Demo</a>
-                <a href="#" class="btn small" target="_blank">View Code</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="container terminal-box-individual">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <!-- Timeline Item 1 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-icon">
-              <!-- Updated icon path for experience timeline -->
-              <img src="java-original.svg" alt="Company logo" />
-            </div>
-            <div class="timeline-content">
-              <h3>Senior Java Developer</h3>
-              <span class="timeline-date">2023 – Present</span>
-              <p>
-                Architected microservices for a high‑traffic e‑commerce platform,
-                improving performance by 30% and reducing deployment times.
-              </p>
-            </div>
-          </div>
-          <!-- Timeline Item 2 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-icon">
-              <!-- Updated icon path for experience timeline -->
-              <img src="python-original.svg" alt="Company logo" />
-            </div>
-            <div class="timeline-content">
-              <h3>Backend Engineer</h3>
-              <span class="timeline-date">2021 – 2023</span>
-              <p>
-                Built scalable RESTful APIs in Python and deployed them in
-                Dockerized environments, serving millions of requests per day.
-              </p>
-            </div>
-          </div>
-          <!-- Timeline Item 3 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-icon">
-              <!-- Updated icon path for experience timeline -->
-              <img src="nodejs-original.svg" alt="Company logo" />
-            </div>
-            <div class="timeline-content">
-              <h3>Full‑Stack Developer</h3>
-              <span class="timeline-date">2019 – 2021</span>
-              <p>
-                Developed dynamic web applications using Node.js and React,
-                collaborating with cross‑functional teams to deliver rich user
-                experiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education">
-      <div class="container terminal-box-individual">
-        <h2 class="section-title">Education</h2>
-        <div class="education-list">
-          <div class="edu-item reveal">
-            <h3>Toronto Metropolitan University</h3>
-            <span class="edu-degree">B.Sc. in Computer Science</span>
-            <span class="edu-date">2018 – 2022</span>
+          <div class="timeline-content">
+            <h3>Robotics Developer</h3>
+            <h4>Lassonde School of Engineering, York University</h4>
+            <span class="timeline-date">May 2021 – Aug 2021</span>
             <p>
-              Graduated with honours on the Dean’s List each year. Led a capstone
-              project to build a secure, scalable web application used by
-              hundreds of students.
+              Developed dynamic web applications using Node.js and React,
+              collaborating with cross‑functional teams to deliver rich user
+              experiences.
             </p>
           </div>
         </div>
       </div>
-    </section>
-
-<section id="skills">
-  <div class="container terminal-box-individual">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-wrapper">
-
-      <!-- Programming Languages -->
-      <div class="skill-category">
-        <h3>Programming Languages</h3>
-        <div class="skill-bar" data-level="90">
-          <span class="skill-name"><i class="fab fa-js-square"></i> JavaScript</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="85">
-          <span class="skill-name"><i class="fab fa-python"></i> Python</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="80">
-          <span class="skill-name"><i class="fab fa-java"></i> Java</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="70">
-          <span class="skill-name"><i class="fas fa-code"></i> C++</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-      </div>
-
-      <!-- Frameworks & Libraries -->
-      <div class="skill-category">
-        <h3>Frameworks & Libraries</h3>
-        <div class="skill-bar" data-level="85">
-          <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="75">
-          <span class="skill-name"><i class="fab fa-react"></i> React</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="80">
-          <span class="skill-name"><i class="fas fa-server"></i> Express</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="70">
-          <span class="skill-name"><i class="fas fa-flask"></i> Flask</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-      </div>
-
-      <!-- Tools & Platforms -->
-      <div class="skill-category">
-        <h3>Tools & Platforms</h3>
-        <div class="skill-bar" data-level="90">
-          <span class="skill-name"><i class="fab fa-git-alt"></i> Git</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="80">
-          <span class="skill-name"><i class="fab fa-docker"></i> Docker</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="70">
-          <span class="skill-name"><i class="fab fa-aws"></i> AWS</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="75">
-          <span class="skill-name"><i class="fab fa-linux"></i> Linux</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-        <div class="skill-bar" data-level="85">
-          <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
-          <div class="skill-progress"><span class="progress-inner"></span></div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="skills">
+    <div class="container terminal-box-individual">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-wrapper">
+
+        <!-- Programming Languages -->
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-bar" data-level="95">
+            <span class="skill-name"><i class="fab fa-java"></i> Java</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="92">
+            <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="83">
+            <span class="skill-name"><i class="fas fa-c"></i> C</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="80">
+            <span class="skill-name"><i class="fab fa-js-square"></i> JavaScript</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="skill-category">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skill-bar" data-level="85">
+            <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="80">
+            <span class="skill-name"><i class="fas fa-server"></i> Express</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="95">
+            <span class="skill-name"><i class="fas fa-code"></i> JUnit</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="80">
+            <span class="skill-name"><i class="fas fa-s"></i> Selenium</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="80">
+            <span class="skill-name"><i class="fas fa-robot"></i> ROS</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="skill-category">
+          <h3>Tools & Platforms</h3>
+          <div class="skill-bar" data-level="90">
+            <span class="skill-name"><i class="fab fa-git-alt"></i> Git</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="80">
+            <span class="skill-name"><i class="fab fa-docker"></i> Docker</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="70">
+            <span class="skill-name"><i class="fab fa-aws"></i> AWS</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="85">
+            <span class="skill-name"><i class="fab fa-linux"></i> Linux</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="85">
+            <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+          <div class="skill-bar" data-level="85">
+            <span class="skill-name"><i class="fas fa-truck-fast"></i> NPM/Maven/Graddle/PIP</span>
+            <div class="skill-progress"><span class="progress-inner"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container terminal-box-individual">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content reveal contact-flex">
-          <div class="terminal-box-individual">
-            <div class="contact-info-block">
-              <span class="prompt">📍</span> <span>Toronto, Canada</span>
-            </div>
-            <div class="contact-info-block">
-              <span class="prompt">✉️</span> <span>adnanfahad500@gmail.com</span>
-            </div>
-            <div class="contact-info-block">
-              <span class="prompt">📞</span> <span>+1 234 567 8901</span>
-            </div>
-            <div class="contact-info-block">
-              <span class="prompt">🔗</span> <span>Follow Me:</span>
-              <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-                  <img src="git-original.svg" alt="GitHub" />
-                </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-                  <img src="java-original.svg" alt="LinkedIn" />
-                </a>
-                <a href="mailto:adnanfahad500@gmail.com" aria-label="Email">
-                  <img src="docker-original.svg" alt="Email" />
-                </a>
-              </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container terminal-box-individual">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content reveal contact-flex">
+        <div class="terminal-box-individual">
+          <div class="contact-info-block">
+            <span class="prompt">📍</span> <span>Toronto, Canada</span>
+          </div>
+          <div class="contact-info-block">
+            <span class="prompt">✉️</span> <span>adnanfahad500@gmail.com</span>
+          </div>
+          <div class="contact-info-block">
+            <span class="prompt">📞</span> <span>+1 (647) 562-9340</span>
+          </div>
+          <div class="contact-info-block">
+            <span class="prompt">🔗</span> <span>Follow Me:</span>
+            <div class="social-links">
+              <a href="https://github.com/Faizi-AdnanFahad" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/adnan-fahad-faizi-707a211b0/" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://leetcode.com/u/adnan_fahad1/" target="_blank" aria-label="LeetCode">
+                <i class="fa-solid fa-laptop-code"></i>
+              </a>
             </div>
           </div>
-          <form id="contact-form" action="https://formsubmit.co/adnanfahad500@gmail.com" method="POST">
-            <!-- Additional hidden fields for FormSubmit: disable captcha and set a custom subject -->
-            <input type="hidden" name="_subject" value="New message from portfolio site" />
-            <input type="hidden" name="_captcha" value="false" />
-            <div class="form-row">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-            </div>
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit" class="btn primary">Send Message</button>
-            <!-- Status message placeholder shown after submission -->
-            <div id="form-status" role="status" aria-live="polite"></div>
-          </form>
         </div>
-      </div>
-    </section>
-
-    <!-- Modals for project previews -->
-    <!-- Modal 1 -->
-    <div id="modal1" class="modal">
-      <div class="modal-dialog">
-        <span class="modal-close" aria-label="Close">&times;</span>
-        <!-- Updated modal image path: stored at root -->
-        <img src="project1.png" alt="Project 1 larger preview" />
-        <h3>Project One – AI Task Manager</h3>
-        <p>
-          This project leverages artificial intelligence to help users manage
-          tasks, deadlines, and priorities. It includes natural language
-          processing for input, adaptive scheduling, and a sleek dashboard.
-        </p>
-        <ul>
-          <li>Built with Vanilla JS, CSS, and HTML</li>
-          <li>Integrates with external AI APIs</li>
-          <li>Responsive and accessible design</li>
-        </ul>
-        <div class="modal-links">
-          <a href="#" class="btn small" target="_blank">Live Demo</a>
-          <a href="#" class="btn small" target="_blank">Source Code</a>
-        </div>
+        <form id="contact-form" action="https://formsubmit.co/adnanfahad500@gmail.com" method="POST">
+          <!-- Additional hidden fields for FormSubmit: disable captcha and set a custom subject -->
+          <input type="hidden" name="_subject" value="New message from portfolio site" />
+          <input type="hidden" name="_captcha" value="false" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn primary">Send Message</button>
+          <!-- Status message placeholder shown after submission -->
+          <div id="form-status" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </div>
-    <!-- Modal 2 -->
-    <div id="modal2" class="modal">
-      <div class="modal-dialog">
-        <span class="modal-close" aria-label="Close">&times;</span>
-        <!-- Updated modal image path: stored at root -->
-        <img src="project2.png" alt="Project 2 larger preview" />
-        <h3>Project Two – Real‑Time Chat App</h3>
-        <p>
-          A secure and stylish messaging application supporting group chats,
-          emoji reactions, and file sharing. End‑to‑end encryption keeps
-          conversations private and safe.
-        </p>
-        <ul>
-          <li>Node.js backend with Socket.IO</li>
-          <li>Vanilla JS front‑end animations</li>
-          <li>Dark and light theme support</li>
-        </ul>
-        <div class="modal-links">
-          <a href="#" class="btn small" target="_blank">Live Demo</a>
-          <a href="#" class="btn small" target="_blank">Source Code</a>
-        </div>
+  </section>
+
+  <!-- Modals for project previews -->
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-dialog">
+      <span class="modal-close" aria-label="Close">&times;</span>
+      <!-- Updated modal image path: stored at root -->
+      <img src="project1.png" alt="Project 1 larger preview" />
+      <h3>Project One – AI Task Manager</h3>
+      <p>
+        This project leverages artificial intelligence to help users manage
+        tasks, deadlines, and priorities. It includes natural language
+        processing for input, adaptive scheduling, and a sleek dashboard.
+      </p>
+      <ul>
+        <li>Built with Vanilla JS, CSS, and HTML</li>
+        <li>Integrates with external AI APIs</li>
+        <li>Responsive and accessible design</li>
+      </ul>
+      <div class="modal-links">
+        <a href="#" class="btn small" target="_blank">Live Demo</a>
+        <a href="#" class="btn small" target="_blank">Source Code</a>
       </div>
     </div>
-    <!-- Modal 3 -->
-    <div id="modal3" class="modal">
-      <div class="modal-dialog">
-        <span class="modal-close" aria-label="Close">&times;</span>
-        <!-- Updated modal image path: stored at root -->
-        <img src="project3.png" alt="Project 3 larger preview" />
-        <h3>Project Three – Portfolio Generator</h3>
-        <p>
-          A tool that transforms simple markdown files into beautiful,
-          responsive portfolio websites. Perfect for developers who want to
-          showcase their work quickly and effortlessly.
-        </p>
-        <ul>
-          <li>Python Flask backend</li>
-          <li>Dynamic template rendering</li>
-          <li>Customizable themes</li>
-        </ul>
-        <div class="modal-links">
-          <a href="#" class="btn small" target="_blank">Live Demo</a>
-          <a href="#" class="btn small" target="_blank">Source Code</a>
-        </div>
+  </div>
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-dialog">
+      <span class="modal-close" aria-label="Close">&times;</span>
+      <!-- Updated modal image path: stored at root -->
+      <img src="project2.png" alt="Project 2 larger preview" />
+      <h3>Project Two – Real‑Time Chat App</h3>
+      <p>
+        A secure and stylish messaging application supporting group chats,
+        emoji reactions, and file sharing. End‑to‑end encryption keeps
+        conversations private and safe.
+      </p>
+      <ul>
+        <li>Node.js backend with Socket.IO</li>
+        <li>Vanilla JS front‑end animations</li>
+        <li>Dark and light theme support</li>
+      </ul>
+      <div class="modal-links">
+        <a href="#" class="btn small" target="_blank">Live Demo</a>
+        <a href="#" class="btn small" target="_blank">Source Code</a>
       </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>© <span id="year"></span> Adnan. All rights reserved.</p>
+  </div>
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-dialog">
+      <span class="modal-close" aria-label="Close">&times;</span>
+      <!-- Updated modal image path: stored at root -->
+      <img src="project3.png" alt="Project 3 larger preview" />
+      <h3>Project Three – Portfolio Generator</h3>
+      <p>
+        A tool that transforms simple markdown files into beautiful,
+        responsive portfolio websites. Perfect for developers who want to
+        showcase their work quickly and effortlessly.
+      </p>
+      <ul>
+        <li>Python Flask backend</li>
+        <li>Dynamic template rendering</li>
+        <li>Customizable themes</li>
+      </ul>
+      <div class="modal-links">
+        <a href="#" class="btn small" target="_blank">Live Demo</a>
+        <a href="#" class="btn small" target="_blank">Source Code</a>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <!-- Main Script -->
-    <!-- Updated JavaScript path: the script file is in the repo root after upload -->
-    <script src="main.js"></script>
-  </body>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Adnan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <!-- Updated JavaScript path: the script file is in the repo root after upload -->
+  <script src="main.js"></script>
+</body>
+
 </html>
