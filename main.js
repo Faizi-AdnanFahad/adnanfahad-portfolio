@@ -41,6 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Easter Egg: Konami Code
   initKonamiCode();
+
+  // Hamburger menu toggle for mobile nav
+  const hamburger = document.getElementById('hamburger-menu');
+  const navbar = document.getElementById('navbar');
+  if (hamburger && navbar) {
+    const navList = navbar.querySelector('ul');
+    hamburger.addEventListener('click', function () {
+      navList.classList.toggle('open');
+      // Update aria-expanded for accessibility
+      hamburger.setAttribute('aria-expanded', navList.classList.contains('open'));
+    });
+    // Optional: Close nav when a link is clicked (mobile UX)
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 600) {
+          navList.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
 });
 
 /**

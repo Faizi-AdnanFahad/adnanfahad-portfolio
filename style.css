@@ -1122,16 +1122,16 @@ body.light-mode .terminal-body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 2.2em;
-  flex-wrap: wrap;
-  margin: 3em auto 3em auto;
+    gap: 1em;
+    flex-wrap: nowrap;
+    margin: 1em auto;
   max-width: 1100px;
 }
 
 body.light-mode .metrics-container {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .glass-box.metric-block {
@@ -1153,9 +1153,9 @@ body.light-mode .metrics-container {
 }
 
 body.light-mode .glass-box.metric-block {
-  background: #fff;
-  border: 1.5px solid var(--card-border);
-  box-shadow: 0 0 8px 2px #e0e0e0, 0 0 24px 8px #e0e0e044;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    box-shadow: none;
 }
 
 .metric-value {
@@ -1275,4 +1275,180 @@ body.light-mode .about-container {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 0 8px 2px #e0e0e0, 0 0 32px 8px #e0e0e044;
+}
+
+/* --- Responsive Styles for Mobile Devices --- */
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    min-height: var(--nav-height);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7em 1em;
+    height: auto;
+  }
+  .logo {
+    margin-bottom: 0.5em;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    font-size: 1.1rem;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul li a {
+    padding: 0.7em 0;
+    width: 100%;
+    display: block;
+  }
+  #theme-toggle {
+    align-self: flex-end;
+    margin-top: 0.5em;
+  }
+  #hero {
+    padding-top: calc(var(--nav-height) + 1em);
+    min-height: 80vh;
+  }
+  .hero-title {
+    font-size: 1.4rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.7em;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+    padding: 1em 0.5em;
+  }
+  .about-image img {
+    width: 120px;
+    height: 120px;
+  }
+  .frosted-glass {
+    padding: 1em;
+  }
+  .metrics-container {
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em;
+    max-width: 100%;
+  }
+  .glass-box.metric-block {
+    min-width: 0;
+    width: 100%;
+    padding: 1em;
+  }
+  .awards-certs {
+    padding: 1em 0.5em;
+    max-width: 100%;
+  }
+  .awards-list {
+    grid-template-columns: 1fr;
+    gap: 0.7em;
+  }
+  #projects, #education, #experience, #skills, #contact {
+    padding: 2em 0.5em;
+  }
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .timeline {
+    padding-left: 0.5em;
+  }
+  .timeline-content {
+    padding: 0.7em 1em;
+  }
+  .contact-content {
+    padding: 0.5em;
+    gap: 1em;
+  }
+  #contact-form {
+    gap: 0.7em;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.7em;
+  }
+  .terminal-body, .cert-intro-terminal, .contact-panel-terminal {
+    padding: 1em 0.5em;
+    font-size: 1em;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .terminal-box-individual {
+    padding: 1em 0.5em;
+    font-size: 1em;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+  }
+  footer {
+    font-size: 0.7rem;
+    padding: 1em 0;
+  }
+}
+
+/* --- Hamburger Menu Styles --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-secondary);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100vw;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 1em 0;
+    z-index: 150;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .nav-container {
+    position: relative;
+  }
 }
