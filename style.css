@@ -328,12 +328,15 @@ nav ul li a:hover::after {
 }
 
 .about-image img {
-  width: 100%;
-  max-width: 260px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--accent);
   box-shadow: 0 0 24px 4px var(--accent-secondary), 0 0 0 8px #10131a;
   transition: transform 0.4s, box-shadow 0.4s;
+  display: block;
+  margin: 0 auto;
 }
 
 .about-image img:hover {
@@ -1149,15 +1152,57 @@ footer {
   opacity: 0.92;
 }
 
-@media (max-width: 900px) {
-  .metrics-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2em;
-  }
-  .glass-box.metric-block {
-    min-width: 180px;
-    min-height: 110px;
-    padding: 1.5em 1em 1em 1em;
+/* Awards and Certifications Styles */
+.awards-certs {
+  margin-top: 2.2rem;
+  background: rgba(16, 19, 26, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px 0 rgba(0,255,153,0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.2px solid rgba(0,255,153,0.12);
+  padding: 1.5rem 1.2rem;
+}
+.awards-title {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 1px;
+}
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7em 2em;
+}
+.awards-list li {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  background: rgba(0,255,153,0.07);
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  margin-bottom: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  box-shadow: 0 2px 8px 0 rgba(0,255,153,0.08);
+  font-family: 'Fira Code', monospace;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.award-icon {
+  font-size: 1.3em;
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+.awards-list li:hover {
+  background: rgba(0,255,153,0.18);
+  box-shadow: 0 0 16px 2px var(--accent);
+}
+@media (max-width: 700px) {
+  .awards-list {
+    grid-template-columns: 1fr;
+    gap: 0.7em;
   }
 }
