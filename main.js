@@ -131,7 +131,7 @@ function createStarField() {
  * Implements a simple typewriter effect on the hero subtitle.
  */
 function typeWriter() {
-  const text = 'A Software Engineer that is a bug slayer by day and a debugger by night :)';
+  const text = "I\’m Adnan, a passionate Software Developer with an eye for elegant solutions. Whether architecting scalable APIs or crafting seamless user experiences, I thrive on turning complex problems into clean, maintainable code.";
   const typedText = document.getElementById('typed-text');
   let index = 0;
   function type() {
@@ -142,7 +142,6 @@ function typeWriter() {
       const delay = Math.random() * 100 + 50; // 50ms to 150ms
       setTimeout(type, delay);
     } else {
-      // After finishing, wait and then erase and restart
       setTimeout(() => {
         index = 0;
         type();
