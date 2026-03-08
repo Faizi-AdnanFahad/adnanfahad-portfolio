@@ -12,7 +12,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Matrix Rain is initialised separately at the bottom of this file
+  // Matrix Rain is initialized separately at the bottom of this file
 
   // Typewriter Effect
   typeWriter();
