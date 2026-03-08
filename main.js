@@ -2,7 +2,7 @@
  * main.js
  *
  * This script powers the interactive features of the portfolio:
- *  - dynamic starfield generation
+ *  - Matrix-style rain background animation
  *  - typewriter text effect in the hero section
  *  - scroll reveal animations using IntersectionObserver
  *  - modal popups for project details
@@ -12,8 +12,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Starfield
-  createStarField();
+  // Matrix Rain is initialized separately at the bottom of this file
 
   // Typewriter Effect
   typeWriter();
@@ -63,69 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-/**
- * Create a star field by appending small divs to the #starfield element.
- * Each star has a random position, size, and animation speed.
- */
-function createStarField() {
-  const starContainer = document.getElementById('starfield');
-  // Remove any existing stars to avoid duplicates when resizing
-  starContainer.innerHTML = '';
-  // Increase star count for a denser field across the entire page
-  const numStars = 500;
-  const viewportWidth = window.innerWidth;
-  const viewportHeight = window.innerHeight;
-  for (let i = 0; i < numStars; i++) {
-    const star = document.createElement('span');
-    star.classList.add('star');
-    // Random position within the viewport
-    const x = Math.random() * viewportWidth;
-    const y = Math.random() * viewportHeight;
-    star.style.left = `${x}px`;
-    star.style.top = `${y}px`;
-    // Random size (1–3px) and animation speed (5–15s)
-    const size = Math.random() * 4 + 1;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    const duration = Math.random() * 10 + 5;
-    const delay = Math.random() * 5;
-    star.style.animation = `twinkle ${duration}s infinite ease-in-out ${delay}s`;
-    // Add custom properties for movement
-    star.dataset.x = x;
-    star.dataset.y = y;
-    star.dataset.dx = (Math.random() - 0.5) * 0.15; // -0.075 to 0.075 px/frame
-    star.dataset.dy = (Math.random() - 0.5) * 0.15;
-    starContainer.appendChild(star);
-  }
-  // Animate stars drifting
-  function animateStars() {
-    const stars = starContainer.querySelectorAll('.star');
-    stars.forEach(star => {
-      let x = parseFloat(star.dataset.x);
-      let y = parseFloat(star.dataset.y);
-      let dx = parseFloat(star.dataset.dx);
-      let dy = parseFloat(star.dataset.dy);
-      x += dx;
-      y += dy;
-      // Wrap around edges
-      if (x < 0) x = viewportWidth;
-      if (x > viewportWidth) x = 0;
-      if (y < 0) y = viewportHeight;
-      if (y > viewportHeight) y = 0;
-      star.style.left = `${x}px`;
-      star.style.top = `${y}px`;
-      star.dataset.x = x;
-      star.dataset.y = y;
-    });
-    requestAnimationFrame(animateStars);
-  }
-  animateStars();
-  // Regenerate stars on window resize to adapt to new viewport dimensions
-  window.addEventListener('resize', () => {
-    createStarField();
-  }, { once: true });
-}
 
 /**
  * Implements a simple typewriter effect on the hero subtitle.
